@@ -59,8 +59,8 @@ kramdown:
   input: GFM                            # use Github Flavored Markdown !important
 
 ## 评论系统
-Disqus（https://disqus.com/）
-disqus_username: superZhoudalu
+#Disqus（https://disqus.com/）
+#disqus_username: superZhoudalu
 
 ## Gitalk
 gitalk:
