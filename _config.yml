@@ -1,12 +1,12 @@
 ## 网站设置
 # 标题
-title: Blog
+title: XuC's Blog
 # 选项卡标题
-SEOTitle: XuC的博客 | XuC‘s Blog
+SEOTitle: XuC的博客 | XuC's Blog
 # 首页背景图片
 header-img: img/post-bg-debug.png
 # 邮箱设置
-email: zhoujianlu666@gmail.com
+email: harrypuxc@gmail.com
 # 网站介绍
 description: "I guess it comes down to a simple choice:get busy living or get busy dying."
 # 关键词
@@ -83,7 +83,7 @@ gitalk:
 #ba_track_id: b50bf2b12b5338a1845e33832976fd68
 
 # Google Analytics
-ga_track_id: 'UA-135281137-1'
+ga_track_id: 'UA-135638378-1'
 # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 ga_domain: https://www.xuc1997.com
 
