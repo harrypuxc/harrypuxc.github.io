@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<head>
+	<title>Chang's Photography</title>
+	<link rel="stylesheet" type="text/css" href="css/booth.css">
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!--BOOTSTRAP--->
+	
+	<script>
+			(function ($) {
+		  $(document).ready(function(){
+
+			// hide .navbar first
+			$(".navbar").hide();
+
+			// fade in .navbar
+			$(function () {
+				$(window).scroll(function () {
+					// set distance user needs to scroll before we fadeIn navbar
+					while ($(this).scrollTop() > 0) {
+						$('.navbar').fadeIn();
+					} else {
+						$('.navbar').fadeOut();
+					}
+				});
+
+
+			});
+
+		});
+		  }(jQuery));
+	</script>
+	<!--Scroll down to show menu bar--->
+	
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon"/> 
+	<!--LOGO on Browser Tag--->
+
+</head>
+<body class="bgcolor">
+	<header class="header">
+		<nav class="navbar navbar-style  navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+				<div class= "navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#micon">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>					
+					<a class="navbar-brand" href="index.html">Chang's Photography</a>
+					<a href="index.html"><img class="logo" src="IMG/LOGO100.png"></a>
+
+				</div>
+				<div class="collapse navbar-collapse" id="micon">
+					<ul class="nav navbar-nav navbar-right">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="" class="dropdown-toggle" data-toggle="dropdown">Media<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown_color" href="Trips.html">Trips</a></li>
+				            <li><a class="dropdown_color" href="Videos.html">Videos</a></li>				            
+				            <li><a class="dropdown_color" href="Gallery.html">Gallery</a></li>
+							<li class="divider"></li>
+				            <li><a class="dropdown_color" href="Take a Photo.html">Photo Booth</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="dropdown-toggle" data-toggle="dropdown">Equipments<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown_color" href="Equipments.html">All my Equipments</a></li>
+							<li class="divider"></li>
+				            <li><a class="dropdown_color" href="PC.html">PC</a></li>
+				            <li><a class="dropdown_color" href="Cameras.html">Cameras</a></li>				            
+				            <li class="divider"></li>
+				            <li><a class="dropdown_color" href="1855.html">18-55mm Lens</a></li>
+				            <li><a class="dropdown_color" href="50.html">50mm Lens</a></li>
+				            <li><a class="dropdown_color" href="100250.html">100-250mm Lens</a></li>
+				            <li class="divider"></li>
+				            <li><a class="dropdown_color" href="Bag.html">Bag</a></li>
+				        </ul>
+					</li>
+					<li><a href="">About</a></li>
+					</ul>
+					<form class="navbar-form navbar-right" role="search">
+				        <div class="form-group">
+				          <input type="text" class="form-control" placeholder="Search">
+				        </div>
+				        <button type="submit" class="btn btn-default">
+				        	<span class="glyphicon glyphicon-search"></span>
+				        </button>
+				    </form>
+				</div>	
+			</div>
+		</nav>
+	</header>
+	<!--MenuBar-->
+	<div class="container-fluid">
+		  <div class="top-container">
+		    <video id="video">Stream not available...</video>
+		    <button id="photo-button" class="btncamera btn-dark">
+		      Take Photo
+		    </button>
+		    <select id="photo-filter" class="select">
+		      <option value="none">Normal</option>
+		      <option value="grayscale(100%)">Grayscale</option>
+		      <option value="sepia(100%)">Sepia</option>
+		      <option value="invert(100%)">Invert</option>
+		      <option value="hue-rotate(90deg)">Hue</option>
+		      <option value="blur(10px)">Blur</option>
+		      <option value="contrast(200%)">Contrast</option>
+		    </select>
+		    <button id="clear-button" class="btncamera btn-light">Clear</button>
+		    <canvas id="canvas"></canvas>
+		  </div>
+		  <div class="bottom-container">
+		    <div id="photos"></div>
+		  </div>
+	</div>
+	<!--Content-->
+	
+	
+	<div id="box" class="box">
+		<div class="box-in"></div>
+	</div>    
+	<script>
+		var timer  = null;
+		box.onclick = function(){
+		    cancelAnimationFrame(timer);
+		    
+		    var startTime = +new Date();     
+		    //Get the length needed to scroll
+		    var b = document.body.scrollTop || document.documentElement.scrollTop;
+		    var d = 500;
+		    //Animation Time
+		    var c = b;
+		    timer = requestAnimationFrame(function func(){
+		        var t = d - Math.max(0,startTime - (+new Date()) + d);
+		        document.documentElement.scrollTop = document.body.scrollTop = t * (-c) / d + b;
+		        timer = requestAnimationFrame(func);
+		        if(t == d){
+		          cancelAnimationFrame(timer);
+		        }
+		    });
+		}
+		</script>	
+	<!--Back to Top-->
+
+	<footer>
+		Copyright@ChangXu
+	</footer>
+	
+	
+</body>
